@@ -1,0 +1,22 @@
+<div class="element-bg-img"><img src="assets/images/1.jpg" alt="" class="img-responsive"> </div>
+<div class="element-left-bottom">
+    <div class="ele-strip">
+        <ul>
+            <li *ngFor="let option of filterOptions" (click)="setActiveFilterOption(option)">{{ option }}</li>
+            <li (click)="setActiveFilterOption(null)">All</li>
+        </ul>
+    </div>
+    <div class="village">
+        <h3>Righteous indignation & like</h3>
+        <span class="line"> </span>
+        <div class="activity_box">
+            <div class="scrollbar" id="style-2">
+                <app-resort-item
+                    *ngFor="let resortItem of (resortsList | filterResortsBy : activeFilterOption); trackBy: trackByAddress"
+                    [resort]="resortItem"
+                    (click)="setActiveResortItem(resortItem)"
+                ></app-resort-item>
+            </div>
+        </div>
+    </div>
+</div>
