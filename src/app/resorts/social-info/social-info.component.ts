@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ResortEntity } from 'src/app/shared/resort-entity.model';
+import { ResortEntity, SocialInformation } from 'src/app/shared/resort-entity.model';
 import { Subscription } from 'rxjs';
 import { ResortsService } from '../resorts.service';
 import { Unsubscriber } from 'src/app/shared/unsubscriber';
@@ -12,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./social-info.component.scss']
 })
 export class SocialInfoComponent extends Unsubscriber implements OnInit, OnDestroy {
-  public resort: ResortEntity;
+  public resortSocialInfo: SocialInformation;
   public subscription: Subscription;
 
   constructor(private resortsService: ResortsService) {
@@ -20,12 +20,12 @@ export class SocialInfoComponent extends Unsubscriber implements OnInit, OnDestr
   }
 
   ngOnInit() {
-    this.resort = this.resortsService.resortsList[0];
+    this.resortSocialInfo = this.resortsService.resortsList[0].social_info;
     this.subscription = this.resortsService.changeActiveResort$$.pipe(
       takeUntil(this.subscribeController$$)
     )
       .subscribe((resort: ResortEntity) => {
-        this.resort = resort;
+        this.resortSocialInfo = resort.social_info;
       });
   }
 

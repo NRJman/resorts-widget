@@ -1,7 +1,32 @@
 <div class="temperatur">
-    <h5>{{ resort.weather.title | titlecase }}</h5>
+    <h5>{{ resortWeather.title | titlecase }}</h5>
     <span class="w-line"> </span>
     <span class="cloud"> </span>
-    <h2>{{ resort.weather.temperature }}<sup class="degree">°</sup></h2>
-    <h6>Water {{ resort.weather.water }}<sup class="degree">°</sup></h6>
+    <div class="temperature-wrapper"
+        *appTemperatureConverter="let temperatureIndexes from resortWeather; let ctrl = controller; let scales = convertionTypes; let i = index;">
+        
+        <div class="temperature-controller-left" (click)="ctrl.prev()"></div>
+
+        <div class="temperature-display">
+            <h2>
+                <span>{{ temperatureIndexes.temperature }}</span>
+                
+                <ng-container [ngSwitch]="scales[i]">
+                    <sup class="degree" *ngSwitchCase="'celcius'"> °C</sup>
+                    <sup class="degree" *ngSwitchCase="'fahrenheit'"> °F</sup>
+                </ng-container>
+            </h2>
+            
+            <h6>
+                <span>Water {{ temperatureIndexes.water }}</span>
+                
+                <ng-container [ngSwitch]="scales[i]">
+                    <sup class="degree" *ngSwitchCase="'celcius'"> °C</sup>
+                    <sup class="degree" *ngSwitchCase="'fahrenheit'"> °F</sup>
+                </ng-container>
+            </h6>
+        </div>
+
+        <div class="temperature-controller-right" (click)="ctrl.next()"></div>
+    </div>
 </div>

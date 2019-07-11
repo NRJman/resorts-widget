@@ -20,12 +20,18 @@ export class ResortsService {
             weather: {
                 title: 'rain',
                 icon: 'assets/images/rain.svg',
-                water: 25,
-                temperature: 32
+                water: {
+                    celcius: 25,
+                    fahrenheit: 57
+                },
+                temperature: {
+                    celcius: 32,
+                    fahrenheit: 64
+                }
             },
             social_info: {
                 title: 'Uxmox Zenolux',
-                img: 'assets/images/a1.jpeg',
+                img: 'assets/images/a1.jpg',
                 followers: 522,
                 following: 89
             },
@@ -39,12 +45,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 22,
-                temperature: 28
+                water: {
+                    celcius: 22,
+                    fahrenheit: 54
+                },
+                temperature: {
+                    celcius: 28,
+                    fahrenheit: 60
+                }
             },
             social_info: {
                 title: 'Exospeed Knowlysis',
-                img: 'assets/images/a2.jpeg',
+                img: 'assets/images/a2.jpg',
                 followers: 550,
                 following: 194
             },
@@ -58,12 +70,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 23,
-                temperature: 29
+                water: {
+                    celcius: 23,
+                    fahrenheit: 55
+                },
+                temperature: {
+                    celcius: 29,
+                    fahrenheit: 61
+                }
             },
             social_info: {
                 title: 'Fishland Thredz',
-                img: 'assets/images/a3.jpeg',
+                img: 'assets/images/a3.jpg',
                 followers: 516,
                 following: 127
             },
@@ -77,12 +95,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 23,
-                temperature: 30
+                water: {
+                    celcius: 23,
+                    fahrenheit: 55
+                },
+                temperature: {
+                    celcius: 30,
+                    fahrenheit: 62
+                }
             },
             social_info: {
                 title: 'Oceanica Xelegyl',
-                img: 'assets/images/a4.jpeg',
+                img: 'assets/images/a4.jpg',
                 followers: 815,
                 following: 60
             },
@@ -96,12 +120,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 19,
-                temperature: 30
+                water: {
+                    celcius: 19,
+                    fahrenheit: 51
+                },
+                temperature: {
+                    celcius: 30,
+                    fahrenheit: 62
+                }
             },
             social_info: {
                 title: 'Bovis Lexicondo',
-                img: 'assets/images/a5.jpeg',
+                img: 'assets/images/a5.jpg',
                 followers: 686,
                 following: 162
             },
@@ -115,12 +145,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 24,
-                temperature: 30
+                water: {
+                    celcius: 24,
+                    fahrenheit: 56
+                },
+                temperature: {
+                    celcius: 30,
+                    fahrenheit: 62
+                }
             },
             social_info: {
                 title: 'Handshake Duflex',
-                img: 'assets/images/a6.jpeg',
+                img: 'assets/images/a6.jpg',
                 followers: 505,
                 following: 173
             },
@@ -134,12 +170,18 @@ export class ResortsService {
             weather: {
                 title: 'rain',
                 icon: 'assets/images/rain.svg',
-                water: 21,
-                temperature: 32
+                water: {
+                    celcius: 31,
+                    fahrenheit: 63
+                },
+                temperature: {
+                    celcius: 32,
+                    fahrenheit: 64
+                }
             },
             social_info: {
                 title: 'Exodoc Comvey',
-                img: 'assets/images/a7.jpeg',
+                img: 'assets/images/a7.jpg',
                 followers: 543,
                 following: 139
             },
@@ -153,12 +195,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 23,
-                temperature: 27
+                water: {
+                    celcius: 23,
+                    fahrenheit: 55
+                },
+                temperature: {
+                    celcius: 27,
+                    fahrenheit: 59
+                }
             },
             social_info: {
                 title: 'Junipoor Kindaloo',
-                img: 'assets/images/a8.jpeg',
+                img: 'assets/images/a8.jpg',
                 followers: 936,
                 following: 127
             },
@@ -172,12 +220,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 21,
-                temperature: 28
+                water: {
+                    celcius: 21,
+                    fahrenheit: 53
+                },
+                temperature: {
+                    celcius: 28,
+                    fahrenheit: 60
+                }
             },
             social_info: {
                 title: 'Oatfarm Amtap',
-                img: 'assets/images/a9.jpeg',
+                img: 'assets/images/a9.jpg',
                 followers: 602,
                 following: 54
             },
@@ -191,12 +245,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 19,
-                temperature: 29
+                water: {
+                    celcius: 19,
+                    fahrenheit: 51
+                },
+                temperature: {
+                    celcius: 29,
+                    fahrenheit: 61
+                }
             },
             social_info: {
                 title: 'Imperium Plasmos',
-                img: 'assets/images/a10.jpeg',
+                img: 'assets/images/a10.jpg',
                 followers: 527,
                 following: 53
             },
@@ -210,12 +270,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 21,
-                temperature: 29
+                water: {
+                    celcius: 21,
+                    fahrenheit: 53
+                },
+                temperature: {
+                    celcius: 29,
+                    fahrenheit: 61
+                }
             },
             social_info: {
                 title: 'Musanpoly Ecolight',
-                img: 'assets/images/a11.jpeg',
+                img: 'assets/images/a11.jpg',
                 followers: 996,
                 following: 170
             },
@@ -229,12 +295,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 24,
-                temperature: 31
+                water: {
+                    celcius: 24,
+                    fahrenheit: 56
+                },
+                temperature: {
+                    celcius: 31,
+                    fahrenheit: 63
+                }
             },
             social_info: {
                 title: 'Assitia Plasmox',
-                img: 'assets/images/a12.jpeg',
+                img: 'assets/images/a12.jpg',
                 followers: 914,
                 following: 138
             },
@@ -248,12 +320,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 23,
-                temperature: 32
+                water: {
+                    celcius: 23,
+                    fahrenheit: 55
+                },
+                temperature: {
+                    celcius: 32,
+                    fahrenheit: 64
+                }
             },
             social_info: {
                 title: 'Geekular Kiosk',
-                img: 'assets/images/a13.jpeg',
+                img: 'assets/images/a13.jpg',
                 followers: 666,
                 following: 165
             },
@@ -267,12 +345,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 25,
-                temperature: 32
+                water: {
+                    celcius: 25,
+                    fahrenheit: 57
+                },
+                temperature: {
+                    celcius: 32,
+                    fahrenheit: 64
+                }
             },
             social_info: {
                 title: 'Kyagoro Coash',
-                img: 'assets/images/a14.jpeg',
+                img: 'assets/images/a14.jpg',
                 followers: 789,
                 following: 79
             },
@@ -286,12 +370,18 @@ export class ResortsService {
             weather: {
                 title: 'rain',
                 icon: 'assets/images/rain.svg',
-                water: 22,
-                temperature: 28
+                water: {
+                    celcius: 22,
+                    fahrenheit: 54
+                },
+                temperature: {
+                    celcius: 28,
+                    fahrenheit: 60
+                }
             },
             social_info: {
                 title: 'Naxdis Exerta',
-                img: 'assets/images/a15.jpeg',
+                img: 'assets/images/a15.jpg',
                 followers: 755,
                 following: 168
             },
@@ -305,12 +395,18 @@ export class ResortsService {
             weather: {
                 title: 'rain',
                 icon: 'assets/images/rain.svg',
-                water: 22,
-                temperature: 29
+                water: {
+                    celcius: 22,
+                    fahrenheit: 54
+                },
+                temperature: {
+                    celcius: 29,
+                    fahrenheit: 61
+                }
             },
             social_info: {
                 title: 'Printspan Velity',
-                img: 'assets/images/a16.jpeg',
+                img: 'assets/images/a16.jpg',
                 followers: 912,
                 following: 148
             },
@@ -324,12 +420,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 19,
-                temperature: 28
+                water: {
+                    celcius: 19,
+                    fahrenheit: 51
+                },
+                temperature: {
+                    celcius: 28,
+                    fahrenheit: 60
+                }
             },
             social_info: {
                 title: 'Anivet Exoswitch',
-                img: 'assets/images/a17.jpeg',
+                img: 'assets/images/a17.jpg',
                 followers: 712,
                 following: 75
             },
@@ -343,12 +445,18 @@ export class ResortsService {
             weather: {
                 title: 'sun',
                 icon: 'assets/images/sun.svg',
-                water: 24,
-                temperature: 32
+                water: {
+                    celcius: 24,
+                    fahrenheit: 56
+                },
+                temperature: {
+                    celcius: 32,
+                    fahrenheit: 64
+                }
             },
             social_info: {
                 title: 'Proxsoft Dentrex',
-                img: 'assets/images/a18.jpeg',
+                img: 'assets/images/a18.jpg',
                 followers: 815,
                 following: 175
             },
@@ -362,12 +470,18 @@ export class ResortsService {
             weather: {
                 title: 'clouds',
                 icon: 'assets/images/clouds.svg',
-                water: 24,
-                temperature: 29
+                water: {
+                    celcius: 24,
+                    fahrenheit: 53
+                },
+                temperature: {
+                    celcius: 29,
+                    fahrenheit: 61
+                }
             },
             social_info: {
                 title: 'Trollery Grok',
-                img: 'assets/images/a19.jpeg',
+                img: 'assets/images/a19.jpg',
                 followers: 592,
                 following: 169
             },
@@ -381,12 +495,18 @@ export class ResortsService {
             weather: {
                 title: 'rain',
                 icon: 'assets/images/rain.svg',
-                water: 21,
-                temperature: 31
+                water: {
+                    celcius: 21,
+                    fahrenheit: 53
+                },
+                temperature: {
+                    celcius: 31,
+                    fahrenheit: 63
+                }
             },
             social_info: {
                 title: 'Hometown Helixo',
-                img: 'assets/images/a20.jpeg',
+                img: 'assets/images/a20.jpg',
                 followers: 510,
                 following: 119
             },

@@ -1,17 +1,17 @@
 <div class="teddy-bear">
     <div class="teddy-text">
-        <h4>{{ resort.social_info.title }}</h4>
+        <h4>{{ resortSocialInfo.title }}</h4>
         <span class="w-line"> </span>
-        <img src="assets/images/b1.jpg" alt="" class="img-responsive">
+        <div class="image" [style.backgroundImage]="'url(' + resortSocialInfo.img + ')'"></div>
     </div>
     <div class="teddy-follow">
         <ul>
             <li class="folw-h">
-                <h3>{{ resort.social_info.followers }}</h3>
+                <h3>{{ resortSocialInfo.followers }}</h3>
                 <p>Followers</p>
             </li>
             <li>
-                <h3>{{ resort.social_info.following }}</h3>
+                <h3>{{ resortSocialInfo.following }}</h3>
                 <p>Following</p>
             </li>
         </ul>
