@@ -297,9 +297,10 @@ i.text-info{
   margin-bottom:.5em;
   padding: .5rem;
   cursor: pointer;
+  transition: background .3s ease-out;
 
-  &:hover {
-    background-image: radial-gradient(circle, rgba(253, 166, 96, .3), transparent,);
+  &:hover, &.active {
+    background: rgba(253, 166, 96, .3);
   }
 }
 .scrollbar{

@@ -1,5 +1,5 @@
 import { PipeTransform, Pipe } from '@angular/core';
-import { ResortEntity } from './models/resort-entity.model';
+import { ResortEntity } from '../models/resort-entity.model';
 
 @Pipe({
     name: 'filterResortsBy'

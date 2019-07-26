@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilterResortsByPipe } from './filter-resorts-by.pipe';
+import { FilterResortsByPipe } from './pipes/filter-resorts-by.pipe';
 
 
 
