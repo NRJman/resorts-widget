@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ResortsService } from '../resorts.service';
-import { ResortEntity, WeatherInformation } from 'src/app/shared/resort-entity.model';
-import { Unsubscriber } from 'src/app/shared/unsubscriber';
+import { ResortEntity, WeatherInformation } from 'src/app/shared/models/resort-entity.model';
+import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 

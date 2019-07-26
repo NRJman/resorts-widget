@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ResortEntity, SocialInformation } from 'src/app/shared/resort-entity.model';
+import { ResortEntity, SocialInformation } from 'src/app/shared/models/resort-entity.model';
 import { Subscription } from 'rxjs';
 import { ResortsService } from '../resorts.service';
-import { Unsubscriber } from 'src/app/shared/unsubscriber';
+import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 import { takeUntil } from 'rxjs/operators';
 
 

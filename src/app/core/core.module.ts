@@ -6,6 +6,7 @@ import { ResortItemComponent } from '../resorts/resorts-list/resort-item/resort-
 import { ResortsListComponent } from '../resorts/resorts-list/resorts-list.component';
 import { SocialInfoComponent } from '../resorts/social-info/social-info.component';
 import { SharedModule } from '../shared/shared.module';
+import { ActiveOptionHighlighterDirective } from '../resorts/resorts-list/active-option-highlighter.directive';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ResortsListComponent,
     SocialInfoComponent,
-    ResortItemComponent
+    ResortItemComponent,
+    ActiveOptionHighlighterDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { SharedModule } from '../shared/shared.module';
     WeatherInfoModule,
     ResortsListComponent,
     SocialInfoComponent,
-    ResortItemComponent
+    ResortItemComponent,
+    ActiveOptionHighlighterDirective
   ]
 })
 export class CoreModule { }

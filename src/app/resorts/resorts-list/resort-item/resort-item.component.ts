@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ResortEntity } from 'src/app/shared/resort-entity.model';
+import { ResortEntity } from 'src/app/shared/models/resort-entity.model';
 
 @Component({
   selector: 'app-resort-item',

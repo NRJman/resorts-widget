@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ResortEntity } from '../shared/resort-entity.model';
+import { ResortEntity } from '../shared/models/resort-entity.model';
 import { Subject } from 'rxjs';
-import { FilterOption } from '../shared/filter-option.model';
+import { FilterOption } from '../shared/models/filter-option.model';
 
 @Injectable({
     providedIn: 'root'

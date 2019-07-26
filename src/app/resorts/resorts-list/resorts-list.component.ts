@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ResortsService } from '../resorts.service';
-import { ResortEntity } from 'src/app/shared/resort-entity.model';
-import { FilterOption } from 'src/app/shared/filter-option.model';
+import { ResortEntity } from 'src/app/shared/models/resort-entity.model';
+import { FilterOption } from 'src/app/shared/models/filter-option.model';
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Unsubscriber } from 'src/app/shared/unsubscriber';
+import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 
 @Component({
   selector: 'app-resorts-list',
@@ -40,12 +40,13 @@ export class ResortsListComponent extends Unsubscriber implements OnInit, OnDest
     this.activeFilterOption = null;
     this.activeResort = this.resortsList[0];
 
-    this.activeResortSubscription = this.resortsService.changeActiveFilterOption$$.pipe(
-      takeUntil(this.subscribeController$$)
-    )
-    .subscribe((option: FilterOption) => {
-      this.activeFilterOption = option;
-    });
+    this.activeResortSubscription = this.resortsService.changeActiveFilterOption$$
+      .pipe(
+        takeUntil(this.subscribeController$$)
+      )
+      .subscribe((option: FilterOption) => {
+        this.activeFilterOption = option;
+      });
   }
 
   ngOnDestroy(): void {

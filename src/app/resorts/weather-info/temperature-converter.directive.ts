@@ -1,5 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef, OnInit } from '@angular/core';
-import { WeatherInformation } from 'src/app/shared/resort-entity.model';
+import { WeatherInformation } from 'src/app/shared/models/resort-entity.model';
 
 type ConvertionTypes = ('celcius' | 'fahrenheit')[];
 
@@ -30,7 +30,7 @@ export class TemperatureConverterDirective implements OnInit {
         this._weatherInfo = weatherInformation;
         this.index = 0;
         this.updateContextValue();
-    };
+    }
     private get weatherInfo(): WeatherInformation {
         return this._weatherInfo;
     }
@@ -63,7 +63,7 @@ export class TemperatureConverterDirective implements OnInit {
             this.context.$implicit = {
                 temperature: this.weatherInfo.temperature[this.convertionTypes[this.index]],
                 water: this.weatherInfo.temperature[this.convertionTypes[this.index]],
-            }
+            };
         }
     }
 
