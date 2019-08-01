@@ -1,4 +1,4 @@
-## Synopsis
+# ResortsWidget
 
 This project is an Angular app sample that represents a simple widget of some random resorts information.
 
