@@ -2,13 +2,14 @@
 
 This project is an Angular app sample that represents a simple widget of some random resorts information.
 
-## Motivation
+## What have been practiced?
 
-Practicing Angular pipes and directives.
+Pipes, structural and attribute directives.
+Testing the staff described above.
 
 ## Running
 
-Follow [this link](https://nrjman.github.io/resorts-widget/) to run this app.
+Follow [this link](https://nrjman.github.io/resorts-widget/) to run the app.
 
 ## License
 
