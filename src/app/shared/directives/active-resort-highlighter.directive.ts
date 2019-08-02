@@ -1,5 +1,5 @@
 import { Directive, AfterViewInit, Renderer2, ElementRef, AfterViewChecked, HostListener } from '@angular/core';
-import { ResortsService } from '../../resorts.service';
+import { ResortsService } from '../../resorts/resorts.service';
 
 @Directive({
     selector: '[appActiveResortHighlighter]'
