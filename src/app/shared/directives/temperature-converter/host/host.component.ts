@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { WeatherInformation } from '../../models/resort-entity.model';
+import { WeatherInformation } from '../../../models/resort-entity.model';
 import { resortsList } from 'db/resorts/resorts';
-import { TemperatureConverterDirective } from './temperature-converter.directive';
+import { TemperatureConverterDirective } from '../temperature-converter.directive';
 
 @Component({
     templateUrl: './host.component.html'

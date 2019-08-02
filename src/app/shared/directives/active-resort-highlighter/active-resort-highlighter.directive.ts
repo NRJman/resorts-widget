@@ -1,23 +1,21 @@
-import { Directive, AfterViewInit, Renderer2, ElementRef, AfterViewChecked, HostListener } from '@angular/core';
+import { Directive, AfterViewInit, Renderer2, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
     selector: '[appActiveResortHighlighter]'
 })
-export class ActiveResortHighlighterDirective implements AfterViewInit, AfterViewChecked {
-    private visibleResortItems: HTMLCollection;
+export class ActiveResortHighlighterDirective implements AfterViewInit {
 
-    constructor(
-        private renderer: Renderer2,
-        private templateRef: ElementRef
-    ) { }
+    constructor(private renderer: Renderer2, private templateRef: ElementRef) { }
 
-    @HostListener('click', ['$event', '$event.path'])
-    onScrollbarClick(event: Event, eventPath: HTMLElement[]) {
+    @HostListener('click', ['$event.path'])
+    onScrollbarClick(eventPath: HTMLElement[]) {
         let newActiveResortItem: HTMLElement;
         const isItResortItemClick: boolean = eventPath.some(item => {
-            if (item.tagName.toLowerCase() === 'app-resort-item') {
+            if (item.classList && item.classList.contains('activity-row')) {
+                newActiveResortItem = item;
+                return true;
+            } else if (item.tagName && item.tagName.toLowerCase() === 'app-resort-item') {
                 newActiveResortItem = (item.firstElementChild as HTMLElement);
-
                 return true;
             }
 
@@ -38,11 +36,12 @@ export class ActiveResortHighlighterDirective implements AfterViewInit, AfterVie
     ngAfterViewInit(): void {
         const resortItems: HTMLCollection = this.templateRef.nativeElement.children;
 
-        this.visibleResortItems = resortItems;
-        this.renderer.addClass(resortItems[0].firstElementChild, 'active');
-    }
+        if (resortItems[0].children.length > 0) {
+            this.renderer.addClass(resortItems[0].firstElementChild, 'active');
 
-    ngAfterViewChecked(): void {
-        this.visibleResortItems = this.templateRef.nativeElement.children;
+            return;
+        }
+
+        this.renderer.addClass(resortItems[0], 'active');
     }
 }

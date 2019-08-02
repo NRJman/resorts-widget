@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherInfoComponent } from './weather-info.component';
+import { TemperatureConverterDirective } from 'src/app/shared/directives/temperature-converter/temperature-converter.directive';
 
 describe('WeatherInfoComponent', () => {
   let component: WeatherInfoComponent;
@@ -8,7 +9,10 @@ describe('WeatherInfoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WeatherInfoComponent ]
+      declarations: [
+        WeatherInfoComponent,
+        TemperatureConverterDirective
+      ]
     })
     .compileComponents();
   }));

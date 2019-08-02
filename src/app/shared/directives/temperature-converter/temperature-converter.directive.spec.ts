@@ -1,11 +1,10 @@
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 import { TemperatureConverterDirective, ConvertionType } from './temperature-converter.directive';
-import * as fromTemperatureConverter from './host.component';
+import * as fromTemperatureConverter from './host/host.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { WeatherInformation } from '../../models/resort-entity.model';
 
-fdescribe('TemperatureConverterDirective', () => {
+describe('TemperatureConverterDirective', () => {
     let fixture: ComponentFixture<fromTemperatureConverter.HostComponent>;
     let debugElement: DebugElement;
     let component: fromTemperatureConverter.HostComponent;

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ResortItemComponent } from './resort-item.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 describe('ResortItemComponent', () => {
   let component: ResortItemComponent;
@@ -8,7 +10,7 @@ describe('ResortItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResortItemComponent ]
+      imports: [ SharedModule, CoreModule ]
     })
     .compileComponents();
   }));
