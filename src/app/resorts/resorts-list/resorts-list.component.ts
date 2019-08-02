@@ -5,6 +5,7 @@ import { FilterOption } from 'src/app/shared/models/filter-option.model';
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
+import { resortsList } from 'db/resorts/resorts';
 
 @Component({
   selector: 'app-resorts-list',
@@ -13,7 +14,7 @@ import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 })
 export class ResortsListComponent extends Unsubscriber implements OnInit, OnDestroy {
   public filterOptions: FilterOption[];
-  public resortsList: ResortEntity[];
+  public resortsList: ResortEntity[] = resortsList;
   public activeFilterOption: FilterOption;
   public activeResort: ResortEntity;
   public activeResortSubscription: Subscription;
@@ -36,7 +37,6 @@ export class ResortsListComponent extends Unsubscriber implements OnInit, OnDest
 
   ngOnInit(): void {
     this.filterOptions = this.resortsService.filterOptions;
-    this.resortsList = this.resortsService.resortsList;
     this.activeFilterOption = null;
     this.activeResort = this.resortsList[0];
 

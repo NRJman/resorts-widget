@@ -1,5 +1,4 @@
 import { Directive, AfterViewInit, Renderer2, ElementRef, AfterViewChecked, HostListener } from '@angular/core';
-import { ResortsService } from '../../resorts/resorts.service';
 
 @Directive({
     selector: '[appActiveResortHighlighter]'
@@ -9,8 +8,7 @@ export class ActiveResortHighlighterDirective implements AfterViewInit, AfterVie
 
     constructor(
         private renderer: Renderer2,
-        private templateRef: ElementRef,
-        private resortsService: ResortsService
+        private templateRef: ElementRef
     ) { }
 
     @HostListener('click', ['$event', '$event.path'])

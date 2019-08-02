@@ -22,8 +22,8 @@ interface DirectiveContext {
     selector: '[appTemperatureConverter]'
 })
 export class TemperatureConverterDirective implements OnInit {
-    private _weatherInfo: WeatherInformation = null;
     public index = 0;
+    private _weatherInfo: WeatherInformation = null;
     private readonly convertionTypes: ConvertionTypes = ['celcius', 'fahrenheit'];
     private context: DirectiveContext = null;
     @Input('appTemperatureConverterFrom') private set weatherInfo(weatherInformation: WeatherInformation) {
@@ -62,7 +62,7 @@ export class TemperatureConverterDirective implements OnInit {
             this.context.index = this.index;
             this.context.$implicit = {
                 temperature: this.weatherInfo.temperature[this.convertionTypes[this.index]],
-                water: this.weatherInfo.temperature[this.convertionTypes[this.index]],
+                water: this.weatherInfo.water[this.convertionTypes[this.index]],
             };
         }
     }
@@ -71,7 +71,7 @@ export class TemperatureConverterDirective implements OnInit {
         this.context = {
             $implicit: {
                 temperature: this.weatherInfo.temperature[this.convertionTypes[this.index]],
-                water: this.weatherInfo.temperature[this.convertionTypes[this.index]],
+                water: this.weatherInfo.water[this.convertionTypes[this.index]],
             },
             controller: {
                 prev: this.prev.bind(this), // could also be as prev() => this.next()

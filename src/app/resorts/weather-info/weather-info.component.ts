@@ -4,6 +4,7 @@ import { ResortEntity, WeatherInformation } from 'src/app/shared/models/resort-e
 import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 import { Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { resortsList } from 'db/resorts/resorts';
 
 @Component({
   selector: 'app-weather-info',
@@ -11,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./weather-info.component.scss']
 })
 export class WeatherInfoComponent extends Unsubscriber implements OnInit, OnDestroy {
-  public resortWeather: WeatherInformation;
+  public resortWeather: WeatherInformation = resortsList[0].weather;
   public subscription: Subscription;
 
   constructor(private resortsService: ResortsService) {
@@ -19,13 +20,13 @@ export class WeatherInfoComponent extends Unsubscriber implements OnInit, OnDest
   }
 
   ngOnInit() {
-    this.resortWeather = this.resortsService.resortsList[0].weather;
-    this.subscription = this.resortsService.changeActiveResort$$.pipe(
-      takeUntil(this.subscribeController$$)
-    )
-    .subscribe((resort: ResortEntity) => {
-      this.resortWeather = resort.weather;
-    });
+    this.subscription = this.resortsService.changeActiveResort$$
+      .pipe(
+        takeUntil(this.subscribeController$$)
+      )
+      .subscribe((resort: ResortEntity) => {
+        this.resortWeather = resort.weather;
+      });
   }
 
   ngOnDestroy(): void {

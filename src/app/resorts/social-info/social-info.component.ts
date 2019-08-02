@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ResortsService } from '../resorts.service';
 import { Unsubscriber } from 'src/app/shared/services/unsubscriber';
 import { takeUntil } from 'rxjs/operators';
+import { resortsList } from 'db/resorts/resorts';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrls: ['./social-info.component.scss']
 })
 export class SocialInfoComponent extends Unsubscriber implements OnInit, OnDestroy {
-  public resortSocialInfo: SocialInformation;
+  public resortSocialInfo: SocialInformation = resortsList[0].social_info;
   public subscription: Subscription;
 
   constructor(private resortsService: ResortsService) {
@@ -20,10 +21,10 @@ export class SocialInfoComponent extends Unsubscriber implements OnInit, OnDestr
   }
 
   ngOnInit() {
-    this.resortSocialInfo = this.resortsService.resortsList[0].social_info;
-    this.subscription = this.resortsService.changeActiveResort$$.pipe(
-      takeUntil(this.subscribeController$$)
-    )
+    this.subscription = this.resortsService.changeActiveResort$$
+      .pipe(
+          takeUntil(this.subscribeController$$)
+      )
       .subscribe((resort: ResortEntity) => {
         this.resortSocialInfo = resort.social_info;
       });
