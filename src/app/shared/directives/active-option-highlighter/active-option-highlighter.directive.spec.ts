@@ -1,12 +1,18 @@
 import { ComponentFixture, async, TestBed } from "@angular/core/testing";
-import * as fromActiveOptionHighlighter from './host/host.component';
 import { ActiveOptionHighlighterDirective } from './active-option-highlighter.directive';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
+import { Component } from '@angular/core';
+
+@Component({
+    templateUrl: './host/host.component.html'
+})
+export class HostComponent { }
+
 describe('ActiveOptionHighlighterDirective', () => {
-    let fixture: ComponentFixture<fromActiveOptionHighlighter.HostComponent>;
-    let component: fromActiveOptionHighlighter.HostComponent;
+    let fixture: ComponentFixture<HostComponent>;
+    let component: HostComponent;
     let debugElement: DebugElement;
     let lastActiveItem: HTMLLIElement;
     let elementNextToActiveOne: HTMLLIElement;
@@ -15,13 +21,13 @@ describe('ActiveOptionHighlighterDirective', () => {
         TestBed.configureTestingModule({
             declarations: [
                 ActiveOptionHighlighterDirective,
-                fromActiveOptionHighlighter.HostComponent
+                HostComponent
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(fromActiveOptionHighlighter.HostComponent);
+        fixture = TestBed.createComponent(HostComponent);
         debugElement = fixture.debugElement;
         component = debugElement.componentInstance;
         fixture.detectChanges();

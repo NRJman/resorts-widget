@@ -1,12 +1,17 @@
 import { ComponentFixture, async, TestBed } from "@angular/core/testing";
-import * as fromActiveResortHighlighter from './host/host.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ActiveResortHighlighterDirective } from './active-resort-highlighter.directive';
+import { Component } from '@angular/core';
+
+@Component({
+    templateUrl: './host/host.component.html'
+})
+export class HostComponent { }
 
 describe('ActiveResortHighlighterDirective', () => {
-    let fixture: ComponentFixture<fromActiveResortHighlighter.HostComponent>;
-    let component: fromActiveResortHighlighter.HostComponent;
+    let fixture: ComponentFixture<HostComponent>;
+    let component: HostComponent;
     let debugElement: DebugElement;
     let lastActiveItem: HTMLDivElement;
     let elementNextToActiveOne: HTMLDivElement;
@@ -15,13 +20,13 @@ describe('ActiveResortHighlighterDirective', () => {
         TestBed.configureTestingModule({
             declarations: [
                 ActiveResortHighlighterDirective,
-                fromActiveResortHighlighter.HostComponent
+                HostComponent
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(fromActiveResortHighlighter.HostComponent);
+        fixture = TestBed.createComponent(HostComponent);
         debugElement = fixture.debugElement;
         component = debugElement.componentInstance;
         lastActiveItem = debugElement.query(By.css('.active')).nativeElement;

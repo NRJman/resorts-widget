@@ -1,13 +1,27 @@
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 import { TemperatureConverterDirective, ConvertionType } from './temperature-converter.directive';
-import * as fromTemperatureConverter from './host/host.component';
-import { DebugElement } from '@angular/core';
+import { DebugElement, Component, OnInit, ViewChild } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { WeatherInformation } from '../../models/resort-entity.model';
+import { resortsList } from 'db/resorts/resorts';
+
+@Component({
+    templateUrl: './host/host.component.html'
+})
+export class HostComponent implements OnInit {
+    public resortWeather: WeatherInformation;
+    @ViewChild(TemperatureConverterDirective, { static: false }) public converterDirective: TemperatureConverterDirective;
+    private possibleResortItemIndex = Math.round(Math.random() * (resortsList.length - 1));
+
+    ngOnInit(): void {
+        this.resortWeather = resortsList[this.possibleResortItemIndex].weather;
+    }
+}
 
 describe('TemperatureConverterDirective', () => {
-    let fixture: ComponentFixture<fromTemperatureConverter.HostComponent>;
+    let fixture: ComponentFixture<HostComponent>;
     let debugElement: DebugElement;
-    let component: fromTemperatureConverter.HostComponent;
+    let component: HostComponent;
     let directive: TemperatureConverterDirective;
     let temperatureCtrlLeft: DebugElement;
     let temperatureCtrlRight: DebugElement;
@@ -16,13 +30,13 @@ describe('TemperatureConverterDirective', () => {
         TestBed.configureTestingModule({
             declarations: [
                 TemperatureConverterDirective,
-                fromTemperatureConverter.HostComponent
+                HostComponent
             ]
         }).compileComponents();
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(fromTemperatureConverter.HostComponent);
+        fixture = TestBed.createComponent(HostComponent);
         debugElement = fixture.debugElement;
         component = debugElement.componentInstance;
 
