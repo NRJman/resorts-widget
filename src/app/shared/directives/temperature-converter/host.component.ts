@@ -8,7 +8,7 @@ import { TemperatureConverterDirective } from './temperature-converter.directive
 })
 export class HostComponent implements OnInit {
     public resortWeather: WeatherInformation;
-    @ViewChild(TemperatureConverterDirective, { static: false }) public converterDirective: ElementRef;
+    @ViewChild(TemperatureConverterDirective, { static: false }) public converterDirective: TemperatureConverterDirective;
     private possibleResortItemIndex = Math.round(Math.random() * (resortsList.length - 1));
 
     ngOnInit(): void {

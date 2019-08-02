@@ -1,7 +1,7 @@
 import { Directive, Input, TemplateRef, ViewContainerRef, OnInit } from '@angular/core';
 import { WeatherInformation } from 'src/app/shared/models/resort-entity.model';
 
-type ConvertionTypes = ('celcius' | 'fahrenheit')[];
+export type ConvertionType = ('celcius' | 'fahrenheit');
 
 interface TemperatureIndexes {
     temperature: number;
@@ -15,7 +15,7 @@ interface DirectiveContext {
         next(): void
     };
     index: number;
-    convertionTypes: ConvertionTypes;
+    convertionTypes: ConvertionType[];
 }
 
 @Directive({
@@ -23,21 +23,21 @@ interface DirectiveContext {
 })
 export class TemperatureConverterDirective implements OnInit {
     public index = 0;
-    private _weatherInfo: WeatherInformation = null;
-    private readonly convertionTypes: ConvertionTypes = ['celcius', 'fahrenheit'];
-    private context: DirectiveContext = null;
-    @Input('appTemperatureConverterFrom') private set weatherInfo(weatherInformation: WeatherInformation) {
+    public readonly convertionTypes: ConvertionType[] = ['celcius', 'fahrenheit'];
+    @Input('appTemperatureConverterFrom') public set weatherInfo(weatherInformation: WeatherInformation) {
         this._weatherInfo = weatherInformation;
         this.index = 0;
         this.updateContextValue();
     }
-    private get weatherInfo(): WeatherInformation {
+    public get weatherInfo(): WeatherInformation {
         return this._weatherInfo;
     }
+    private _weatherInfo: WeatherInformation = null;
+    private context: DirectiveContext = null;
 
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {}
 
-    next(): void {
+    private next(): void {
         this.index++;
 
         if (this.index >= this.convertionTypes.length) {
@@ -47,7 +47,7 @@ export class TemperatureConverterDirective implements OnInit {
         this.updateContextValue();
     }
 
-    prev(): void {
+    private prev(): void {
         this.index--;
 
         if (this.index < 0) {
